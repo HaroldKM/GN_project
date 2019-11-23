@@ -1,0 +1,58 @@
+<h1>Dashboard_view_to_display_view</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+
+
+
+            <%= image_tag @post.image_url, class: "img img-fluid" if @post.image.present?%>
+
+
+
+
+    </div>
+    <div class="col-4">
+      <div class="container follower-suggestions" >
+
+        <%=  link_to profile_picture(@post.account,35), profil_path(@post.account.username)%>
+        <%= link_to @post.account.username, profil_path(@post.account.username), class: "text-dark"%>
+        <br><br>
+      <div class="post-details">
+        <div class="post-action">
+          <i class="fa fa-heart fa-2x" ></i>
+
+          <i class="fa fa-comment  fa-2x comment-like"></i>
+
+        </div>
+      </div>
+
+
+
+
+<div class="container ">
+  <p><strong> <%= @post.total_like%> Likes </strong></p>
+  <p class="text-muted"><strong><%= link_to @post.account.username , profil_path(@post.account.username), class: "text-dark"%> ° <%= time_ago_in_words @post.created_at%></strong> </p>
+  <%=simple_format @post.description %>
+  <div class="comments-feed">
+    <%= render "posts/comments", post: @post%>
+  </div>
+</div>
+<div class="comment-box">
+  <%=form_for @comment do |f|%>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.hidden_field :return_to, value: "post" %>
+    <%= f.text_field :comment, placeholder: "Add comment..." %>
+    <%= f.submit "Post", class: "btn btn-success float-right" %>
+  <%end%>
+
+</div>
+</div>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>

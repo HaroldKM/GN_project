@@ -1,0 +1,18 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+ <p>
+   <label>My Avatar</label>
+   <div class="form-group">
+
+   <%= f.file_field :image, class: "form-control" %>
+   <%= f.hidden_field :image_cache %>
+  </div>
+
+   <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+   <br>
+   <%= f.submit "save post", class: "btn btn-success" %>
+ </p>
+<% end %>

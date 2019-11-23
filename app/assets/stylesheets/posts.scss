@@ -1,0 +1,35 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.post-details{
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.post-action{
+  margin-bottom: 20px;
+
+  i{
+    margin-right: 10px;
+    color: #ddd;
+    cursor: pointer;
+  }
+
+
+  i:hover{
+    color: #999;
+  }
+
+  i.active{
+    color: #555;
+  }
+
+}
+
+.comments-feed{
+  height: 90px;
+  overflow-y: scroll; /* Add vertical scrollbar */
+}
