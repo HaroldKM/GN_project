@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="<%=root_path%>" alt="Home">
-  <span class="fa fa-home fa-2x" aria-hidden="true"></span>&nbsp; Home</a>
+  <span class="fa fa-home fa-2x" aria-hidden="true"></span></a>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
@@ -22,8 +22,8 @@
 
 
       <li class="nav-item">
-        <%= link_to "Sign out", destroy_account_session_path, method: :delete,alt: "Out",  class: "nav-link"%>
-        <span class="fa fa-sign-out fa-2x" aria-hidden="true"></span>
+      <a class="nav-link" href="<%= destroy_account_session_path %>" alt="Out">
+      <span class="fa fa-sign-out fa-2x" aria-hidden="true"></span>&nbsp; Sign out</a>
       </li>
 
     </ul>
