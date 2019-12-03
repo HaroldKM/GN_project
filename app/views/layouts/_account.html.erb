@@ -1,29 +1,31 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="<%=root_path%>" alt="Home">
+  <span class="fa fa-home fa-2x" aria-hidden="true"></span>&nbsp; Home</a>
 
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="<%=root_path%>">GN</a>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      <a class="nav-link" href="/dashboard" alt="Dashboard">
+      <span class="fa fa-tachometer fa-2x"></span>&nbsp; Dashboard</a>
+      </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
-              <span class="sr-only">(current)</span></a>
-          </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=profil_path(current_account.username)%>" alt="Profil">
+        <span class="fa fa-user fa-2x" aria-hidden="true"></span>&nbsp; Profil</a>
+      </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="<%=profil_path(current_account.username)%>">My_Profil</a>
-          </li>
-
-          <li class="nav-item">
-          <a class="nav-link" href="<%= new_post_path%>">Post</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= new_post_path%>" alt="Post">
+        <span class="fa fa-plus-circle fa-2x" aria-hidden="true"></span>&nbsp; Post</a>
+      </li>
 
 
-        <li class="nav-item">
-          <%= link_to "sign out", destroy_account_session_path, method: :delete,  class: "nav-link"%>
-        </li>
+      <li class="nav-item">
+        <%= link_to "Sign out", destroy_account_session_path, method: :delete,alt: "Out",  class: "nav-link"%>
+        <span class="fa fa-sign-out fa-2x" aria-hidden="true"></span>
+      </li>
 
-        </ul>
-      </div>
-    </nav>
-    
+    </ul>
+  </div>
+</nav>
