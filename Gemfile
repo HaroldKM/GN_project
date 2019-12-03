@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 #devise authentification
 gem 'devise'
 
+gem 'wdm', '>= 0.1.1'
+
 #uploding image
 gem 'carrierwave', '~> 2.0'
 
