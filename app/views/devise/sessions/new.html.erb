@@ -1,5 +1,5 @@
 <div class="limiter">
-  <div class="container-login100">
+  <div class="container">
     <div class="wrap-login100">
       <form class="login100-form validate-form">
         <span class="login100-form-title p-b-43">
@@ -16,20 +16,23 @@
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
-
+        
+        <div class="row">
+     
         <% if devise_mapping.rememberable? %>
-        <div class="contact100-form-checkbox">
+        <div class="contact100-form-checkbox col-md-4">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
         <% end %>
 
-        <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
-            <%= f.submit "Log in" %>
-          </button>
-        </div>
+        <%= render "devise/shared/links"%>
+      </div>
 
+        <div class="container-login100-form-btn">
+            <%= f.submit "Log in", class: "login100-form-btn"%>
+        </div>
+        
         <div class="text-center p-t-46 p-b-20">
           <span class="txt2">
             or login in using
@@ -49,11 +52,8 @@
           <i class="fa fa-google" aria-hidden="true"></i>
         </a>
         </div>
-        <% end %>
 
-        <div class="row">
-          <%= render "devise/shared/links" %>
-        </div>
+        <% end %>
 
         <div class="login100-more" style="background-image: url('app/assets/images/bg-01.jpg');">
         </div>
